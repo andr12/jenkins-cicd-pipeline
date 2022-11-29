@@ -1,0 +1,71 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: spring-petclinic-deployment
+  labels:
+    app: spring-petclinic
+spec: 
+  replicas: 1
+  minReadySeconds: 20 
+  selector: 
+    matchLabels: 
+      app: spring-petclinic 
+  template : 
+    metadata: 
+      labels: 
+        app: spring-petclinic 
+    spec: 
+      containers: 
+      - name: spring-petclinic 
+        image: us-central1-docker.pkg.dev/or2-msq-epm-cedu-t1iylu/petclinic-repo-halka/petclinic-app:latest
+        ports:
+        - containerPort: 8080
+        env:
+            - name: DB_HOST
+              value: "127.0.0.1"
+            - name: DB_PORT
+              value: "3306" 
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: mysql-user
+            - name: MYSQL_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: mysql-password
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: database      
+            - name: SPRING_PROFILES_ACTIVE 
+              value: mysql       
+            - name: DATASOURCE_INIT_MODE
+              value: always
+      - name: cloud-sql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.28.0 
+        command:
+          - "/cloud_sql_proxy"
+          - "-log_debug_stdout"
+          - "-instances=or2-msq-epm-cedu-t1iylu:us-central1:mysql1=tcp:3306" 
+        securityContext:
+          runAsNonRoot: true
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu:    "1"  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-petclinic
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+  selector:
+    app: spring-petclinic
+  type: LoadBalancer
