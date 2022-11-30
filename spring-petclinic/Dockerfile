@@ -3,7 +3,7 @@
 FROM eclipse-temurin:17-jdk-jammy as build
 WORKDIR /app
 COPY . .
-RUN /bin/sh mvnw dependency:resolve package
+RUN /bin/sh mvnw package
 
 FROM eclipse-temurin:17-jre-jammy as production
 EXPOSE 8080
