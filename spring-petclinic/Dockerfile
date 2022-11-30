@@ -3,8 +3,8 @@
 FROM eclipse-temurin:17-jdk-jammy as build
 WORKDIR /app
 COPY . .
-RUN spring-petclinic/mvnw dependency:go-offline -B
-RUN chmod +x ./mvnw && ./mvnw package
+RUN spring-petclinic/mvnw clean install
+RUN chmod +x spring-petclinic/mvnw && spring-petclinic/mvnw package
 
 FROM eclipse-temurin:17-jre-jammy as production
 EXPOSE 8080
