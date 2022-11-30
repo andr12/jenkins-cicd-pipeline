@@ -4,7 +4,7 @@ FROM eclipse-temurin:17-jdk-jammy as build
 WORKDIR /app
 COPY . .
 RUN pwd
-RUN spring-petclinic/mvnw package
+RUN /app/spring-petclinic/mvnw package
 
 FROM eclipse-temurin:17-jre-jammy as production
 EXPOSE 8080
