@@ -3,7 +3,7 @@
 FROM eclipse-temurin:17-jdk-jammy as build
 WORKDIR /app
 COPY . .
-RUN ./mvnw dependency:go-offline -B
+RUN spring-petclinic/mvnw dependency:go-offline -B
 RUN chmod +x ./mvnw && ./mvnw package
 
 FROM eclipse-temurin:17-jre-jammy as production
