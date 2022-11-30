@@ -3,8 +3,8 @@
 FROM eclipse-temurin:17-jdk-jammy as build
 WORKDIR /app
 COPY . .
-RUN ls -la /app/spring-petclinic/
-RUN /app/spring-petclinic/mvnw package
+RUN cat /app/spring-petclinic/mvnw
+RUN /app/spring-petclinic/mvnw
 
 FROM eclipse-temurin:17-jre-jammy as production
 EXPOSE 8080
