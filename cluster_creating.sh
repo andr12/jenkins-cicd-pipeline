@@ -1,5 +1,9 @@
 #!/bin/bash
 
+gcloud config set project $PROJECT
+
+gcloud config set compute/zone $PROJECT_ZONE
+
 gcloud container clusters create $K8S_CLUSTER \
 --zone $PROJECT_ZONE \
 --machine-type $NODE_MACHINE_TYPE \
@@ -9,10 +13,6 @@ gcloud container clusters create $K8S_CLUSTER \
 --num-nodes $NUM_NODES \
 --network $PROJECT_NETWORK \
 --subnetwork $PROJECT_SUBNETWORK \
-
-gcloud config set project $PROJECT
-
-gcloud config set compute/zone $PROJECT_ZONE
 
 gcloud container clusters get-credentials $K8S_CLUSTER
 
