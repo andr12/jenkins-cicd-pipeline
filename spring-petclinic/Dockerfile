@@ -3,7 +3,10 @@
 FROM eclipse-temurin:17-jdk-jammy as build
 WORKDIR /app
 COPY . .
-RUN /bin/sh mvnw package
+# clean up the file
+RUN sed -i 's/\r$//' mvnw
+# run with the SH path
+RUN /bin/sh mvnw dependency:resolve package
 
 FROM eclipse-temurin:17-jre-jammy as production
 EXPOSE 8080
