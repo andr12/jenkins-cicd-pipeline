@@ -10,6 +10,10 @@ gcloud container clusters create $K8S_CLUSTER \
 --network $PROJECT_NETWORK \
 --subnetwork $PROJECT_SUBNETWORK \
 
+gcloud config set project $PROJECT_ID
+
+gcloud config set compute/zone $PROJECT_ZONE
+
 gcloud container clusters get-credentials $K8S_CLUSTER
 
 gcloud sql instances create $MYSQL_INSTANCE \
