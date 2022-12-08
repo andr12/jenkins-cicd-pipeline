@@ -64,12 +64,6 @@ variable "disk_size_gb" {
   default = 10
 }
 
-variable "service_account" {
-  type        = string
-  description = "The service account to run nodes as if not overridden in `node_pools`. The create_service_account variable default value (true) will cause a cluster-specific service account to be created."
-  default = "mentorship-infra-sa@or2-msq-epm-cedu-t1iylu.iam.gserviceaccount.com"
-}
-
 variable "initial_node_count" {
   type        = number
   description = "The number of nodes to create in this cluster's default node pool."
