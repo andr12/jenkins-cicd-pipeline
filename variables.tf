@@ -1,7 +1,7 @@
 variable "credentials" {
   type        = string
   description = "Location of the credential keyfile."
-  default     = "TF_VAR_JSON_KEY"
+  default     = "JSON_KEY"
 }
 
 variable "project_id" {

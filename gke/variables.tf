@@ -1,7 +1,7 @@
 variable "credentials" {
   type        = string
   description = "Location of the credential keyfile."
-  default = "./home/vagrant/terraform-gcp/or2-msq-epm-cedu-t1iylu-05293d904b28.json"
+  default = "$JSON_KEY"
 }
 
 variable "project_id" {
