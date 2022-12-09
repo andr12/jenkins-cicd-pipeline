@@ -10,6 +10,12 @@ variable "project_id" {
   default = "or2-msq-epm-cedu-t1iylu"
 }
 
+variable "location" {
+  type        = string
+  description = "The location to create the cluster."
+  default = "us-central1-a"
+}
+
 variable "region" {
   type        = string
   description = "The region to create the cluster."
