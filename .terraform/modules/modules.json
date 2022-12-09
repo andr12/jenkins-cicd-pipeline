@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"cloud_sql","Source":"./cloud_sql","Dir":"cloud_sql"},{"Key":"gke","Source":"./gke","Dir":"gke"},{"Key":"","Source":"","Dir":"."},{"Key":"artifact_registry","Source":"./artifact_registry","Dir":"artifact_registry"}]}

@@ -46,6 +46,12 @@ variable "machine_type" {
   default = "n1-standard-2"
 }
 
+variable "service_account_email" {
+  type        = string
+  description = "Type of the node compute engines."
+  default = "mentorship-infra-sa@or2-msq-epm-cedu-t1iylu.iam.gserviceaccount.com"
+}
+
 variable "min_count" {
   type        = number
   description = "Minimum number of nodes in the NodePool. Must be >=0 and <= max_node_count."
