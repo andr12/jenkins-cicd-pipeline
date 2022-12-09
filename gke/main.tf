@@ -1,7 +1,7 @@
 resource "google_container_cluster" "primary" {
   name                     = var.name
   project                  = var.project_id
-  location   = var.zones
+  location   = var.location
   network                    = var.network
   subnetwork                 = var.subnetwork
   remove_default_node_pool = true
@@ -10,7 +10,7 @@ resource "google_container_cluster" "primary" {
 
 resource "google_container_node_pool" "primary_preemptible_nodes" {
   name       = "default-node-pool"
-  location   = var.zones
+  location   = var.location
   cluster    = google_container_cluster.primary.name
   min_count                 = var.min_count
       max_count                 = var.max_count
