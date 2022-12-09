@@ -81,3 +81,15 @@ variable "initial_node_count" {
   description = "The number of nodes to create in this cluster's default node pool."
   default = 3
 }
+
+variable "image" {
+  description = "Image type"
+  type        = string
+  default     = "COS_CONTAINERD"
+}
+
+variable "nodes_number" {
+  description = "Number of nodes to create"
+  type        = string
+  default     = 3
+}
