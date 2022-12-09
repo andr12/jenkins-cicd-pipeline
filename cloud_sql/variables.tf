@@ -13,3 +13,9 @@ variable "region" {
   description = "The region where we want to create the database instances, it should be the project region"
   default = "us-central1"
 }
+
+variable "del_protection" {
+  description = "Protection of deleting"
+  type        = bool
+  default     = "false"
+}

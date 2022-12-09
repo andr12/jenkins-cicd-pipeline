@@ -3,9 +3,10 @@ resource "random_id" "db_name_suffix" {
 }
 
 resource "google_sql_database_instance" "instance" {
-  name = "var.name-${random_id.db_name_suffix.hex}"
+  name = "var.name${random_id.db_name_suffix.hex}"
   database_version = var.database_version
   region = var.region
+  deletion_protection = var.del_protection
   settings {
     tier = "db-g1-small"
     ip_configuration {
