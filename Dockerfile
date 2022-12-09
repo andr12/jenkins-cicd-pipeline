@@ -3,7 +3,7 @@
 FROM eclipse-temurin:17-jdk-jammy as build
 WORKDIR /app
 COPY . .
-RUN ./mvnw -DskipTests package
+RUN ./mvnw -DskipTests -Dcheckstyle.skip package
 
 FROM eclipse-temurin:17-jre-jammy as production
 EXPOSE 8080
