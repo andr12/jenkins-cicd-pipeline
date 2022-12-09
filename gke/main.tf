@@ -6,11 +6,7 @@ resource "google_container_cluster" "primary" {
   subnetwork                 = var.subnetwork
   remove_default_node_pool = true
   initial_node_count       = 1
-  auto_provisioning_defaults {
-    image_type = var.image
-    }
-  }
-
+  
 resource "google_container_node_pool" "primary_preemptible_nodes" {
   name       = "default-node-pool"
   location   = var.cluster_location
