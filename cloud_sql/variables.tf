@@ -1,7 +1,7 @@
 variable "name" {
   type = string
   description = "Instance name"
-  default = "my-instance"
+  default = "mysql1"
 }
 variable "database_version" {
   type = string

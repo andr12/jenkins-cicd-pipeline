@@ -1,13 +1,13 @@
 variable "name" {
   type = string
   description = "Repository name"
-  default = "my-repo"
+  default = "petclinic-repo-halka"
 }
 
 variable "location" {
   type = string
   description = "location"
-  default = "us-central-1"
+  default = "us-central1"
 }
 
 variable "repository_id" {
