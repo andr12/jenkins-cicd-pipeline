@@ -1,13 +1,11 @@
 resource "google_container_cluster" "primary" {
   name                     = var.name
   project                  = var.project_id
-  region                     = var.region
-  zones                      = var.zones
+  location   = var.zones
   network                    = var.network
   subnetwork                 = var.subnetwork
   remove_default_node_pool = true
   initial_node_count       = 1
-  horizontal_pod_autoscaling = true
   }
 
 resource "google_container_node_pool" "primary_preemptible_nodes" {
