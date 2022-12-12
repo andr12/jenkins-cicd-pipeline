@@ -32,7 +32,7 @@ variable "database_user" {
   sensitive   = true
   }
 
-variable "database_user_password" {
+variable "database_password" {
   description = "Database user password"
   type        = string
   sensitive   = true
