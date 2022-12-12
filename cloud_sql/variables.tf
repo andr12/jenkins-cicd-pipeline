@@ -19,3 +19,24 @@ variable "del_protection" {
   type        = bool
   default     = "false"
 }
+
+variable "database_name" {
+  description = "Database name"
+  type        = string
+  sensitive   = true
+  default = "env.MYSQL_DATABASE"
+}
+
+variable "database_user" {
+  description = "Database administrator username"
+  type        = string
+  sensitive   = true
+  default = "env.MYSQL_USER"
+}
+
+variable "db_password" {
+  description = "Database administrator password"
+  type        = string
+  sensitive   = true
+  default = "env.MYSQL_PASSWORD"
+}
