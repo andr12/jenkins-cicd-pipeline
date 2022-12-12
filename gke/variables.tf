@@ -12,7 +12,6 @@ variable "location" {
 
 variable "name" {
   type        = string
-  default     = "cluster"
   description = "Name of the cluster"
   default = "petclinic-cluster"
 }
