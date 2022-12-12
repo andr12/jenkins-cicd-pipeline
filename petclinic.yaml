@@ -49,7 +49,7 @@ spec:
         command:
           - "/cloud_sql_proxy"
           - "-log_debug_stdout"
-          - "-instances=or2-msq-epm-cedu-t1iylu:us-central1:my-instance=tcp:3306" 
+          - "-instances=or2-msq-epm-cedu-t1iylu:us-central1:mysql2=tcp:3306" 
         securityContext:
           runAsNonRoot: true
         resources:
