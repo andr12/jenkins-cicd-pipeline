@@ -16,13 +16,13 @@ resource "google_sql_database_instance" "instance" {
 }
 
 resource "google_sql_database" "database" {
-  name     = var.database_name
+  name     = "${var.database_name}"
   instance = google_sql_database_instance.instance.name
   depends_on = [google_sql_database_instance.instance]
 }
 
 resource "google_sql_user" "users" {
-  name     = var.database_user
+  name     = "${var.database_user}"
   instance = google_sql_database_instance.instance.name
   password = var.database_password
   depends_on = [google_sql_database_instance.instance]
