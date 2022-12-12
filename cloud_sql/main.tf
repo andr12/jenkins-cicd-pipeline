@@ -24,6 +24,6 @@ resource "google_sql_database" "database" {
 resource "google_sql_user" "users" {
   name     = var.database_user
   instance = google_sql_database_instance.instance.name
-  password = var.database.user.password
+  password = var.database_user_password
   depends_on = [google_sql_database_instance.instance]
 }

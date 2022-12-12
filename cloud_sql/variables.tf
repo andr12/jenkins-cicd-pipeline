@@ -34,7 +34,7 @@ variable "database_user" {
   default = "env.MYSQL_USER"
 }
 
-variable "db_password" {
+variable "database_user_password" {
   description = "Database administrator password"
   type        = string
   sensitive   = true
