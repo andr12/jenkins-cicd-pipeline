@@ -24,19 +24,16 @@ variable "database_name" {
   description = "Database name"
   type        = string
   sensitive   = true
-  default = env.MYSQL_DATABASE
 }
 
 variable "database_user" {
-  description = "Database administrator username"
+  description = "Database username"
   type        = string
   sensitive   = true
-  default = env.MYSQL_USER
-}
+  }
 
 variable "database_user_password" {
-  description = "Database administrator password"
+  description = "Database user password"
   type        = string
   sensitive   = true
-  default = env.MYSQL_PASSWORD
 }
