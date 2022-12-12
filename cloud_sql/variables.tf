@@ -20,19 +20,19 @@ variable "del_protection" {
   default     = "false"
 }
 
-variable "database_name" {
+variable "DATABASE_NAME" {
   description = "Database name"
   type        = string
   sensitive   = true
 }
 
-variable "database_user" {
+variable "DATABASE_USER" {
   description = "Database username"
   type        = string
   sensitive   = true
   }
 
-variable "database_password" {
+variable "DATABASE_PASSWORD" {
   description = "Database user password"
   type        = string
   sensitive   = true

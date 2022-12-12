@@ -1,3 +1,3 @@
-database_name  = "${MYSQL_DATABASE}"
-database_user  = "${MYSQL_USER}"
-database_password = "${MYSQL_PASSWORD}"
+DATABASE_NAME  = "${MYSQL_DATABASE}"
+DATABASE_USER  = "${MYSQL_USER}"
+DATABASE_PASSWORD = "${MYSQL_PASSWORD}"
