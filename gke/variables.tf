@@ -60,7 +60,7 @@ variable "enable_autopilot" {
 variable "node_pool_name" {
   type        = string
   description = "Name of custom node pool"
-  default     = "Test1"
+  default     = "test1"
 }
 
 variable "cluster_network" {
