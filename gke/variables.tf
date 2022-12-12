@@ -16,11 +16,11 @@ variable "name" {
   default = "petclinic-cluster"
 }
 
-variable "service_account" {
-  description = "A custom service account for the cluster nodes to run as"
-  type        = string
-  default     = ""
-}
+# variable "service_account" {
+#   description = "A custom service account for the cluster nodes to run as"
+#   type        = string
+#   default     = ""
+# }
 
 variable "machine_type" {
   description = "Default machine type"

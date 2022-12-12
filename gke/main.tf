@@ -21,7 +21,7 @@ resource "google_container_node_pool" "cluster-pool-1" {
     machine_type = var.machine_type
     disk_size_gb = var.disk_size_gb
     disk_type = var.disk_type
-    service_account_email = var.service_account_email
+    service_account = var.service_account_email
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
