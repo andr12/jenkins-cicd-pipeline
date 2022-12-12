@@ -23,17 +23,14 @@ variable "del_protection" {
 variable "DATABASE_NAME" {
   description = "Database name"
   type        = string
-  sensitive   = true
 }
 
 variable "DATABASE_USER" {
   description = "Database username"
   type        = string
-  sensitive   = true
-  }
+}
 
 variable "DATABASE_PASSWORD" {
   description = "Database user password"
   type        = string
-  sensitive   = true
 }
