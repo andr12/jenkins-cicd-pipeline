@@ -15,3 +15,17 @@ variable "region" {
   description = "The region to create the cluster."
   default     = "us-central1"
 }
+variable "DATABASE_NAME" {
+  description = "Database name"
+  type        = string
+}
+
+variable "DATABASE_USER" {
+  description = "Database username"
+  type        = string
+}
+
+variable "DATABASE_PASSWORD" {
+  description = "Database user password"
+  type        = string
+}
