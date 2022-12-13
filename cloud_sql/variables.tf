@@ -23,14 +23,17 @@ variable "del_protection" {
 variable "DATABASE_NAME" {
   description = "Database name"
   type        = string
+  default     = "petclinic"
 }
 
 variable "DATABASE_USER" {
   description = "Database username"
   type        = string
+  default     = "petclinic"
 }
 
 variable "DATABASE_PASSWORD" {
   description = "Database user password"
   type        = string
+  default     = "petclinic"
 }
